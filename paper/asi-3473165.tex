@@ -1,0 +1,443 @@
+%  LaTeX support: latex@mdpi.com 
+%  For support, please attach all files needed for compiling as well as the log file, and specify your operating system, LaTeX version, and LaTeX editor.
+
+%=================================================================
+\documentclass[metlit,article,accept,pdftex,moreauthors]{Definitions/mdpi} 
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[indonesian]{babel}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+% \linenumbers
+%--------------------
+
+%---------
+% pdftex
+%---------
+% The option pdftex is for use with pdfLaTeX. Remove "pdftex" for (1) compiling with LaTeX & dvi2pdf (if eps figures are used) or for (2) compiling with XeLaTeX.
+
+%=================================================================
+% MDPI internal commands - do not modify
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2024}
+\copyrightyear{2024}
+%\externaleditor{Academic Editor: Firstname Lastname}
+\datereceived{ } 
+\daterevised{ } % Comment out if no revised date
+\dateaccepted{ } 
+\datepublished{ } 
+%\datecorrected{} % For corrected papers: "Corrected: XXX" date in the original paper.
+%\dateretracted{} % For corrected papers: "Retracted: XXX" date in the original paper.
+\hreflink{https://doi.org/} % If needed use \linebreak
+%\doinum{}
+%\pdfoutput=1 % Uncommented for upload to arXiv.org
+%\CorrStatement{yes}  % For updates
+
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, float, amsmath, amssymb, lineno, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, colortbl, soul, multirow, microtype, tikz, totcount, changepage, attrib, upgreek, array, tabularx, pbox, ragged2e, tocloft, marginnote, marginfix, enotez, amsthm, natbib, hyperref, cleveref, scrextend, url, geometry, newfloat, caption, draftwatermark, seqsplit
+% cleveref: load \crefname definitions after \begin{document}
+
+%=================================================================
+% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
+%% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
+
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{Analisis Pengaruh Durasi Bermain Game Terhadap Jam Tidur Mahasiswa}
+
+% MDPI internal command: Title for citation in the left column
+\TitleCitation{Analisis Pengaruh Durasi Bermain Game Terhadap Jam Tidur Mahasiswa}
+
+% Author Orchid ID: enter ID or remove command
+\newcommand{\orcidauthorA}{0000-0000-0000-000X} % Add \orcidA{} behind the author's name
+%\newcommand{\orcidauthorB}{0000-0000-0000-000X} % Add \orcidB{} behind the author's name
+
+% Authors, for the paper (add full first names)
+\Author{Rakan Ahmad Dhiyaul Haq}
+
+%\longauthorlist{yes}
+
+% MDPI internal command: Authors, for metadata in PDF
+\AuthorNames{Rakan Ahmad Dhiyaul Haq}
+
+% MDPI internal command: Authors, for citation in the left column
+\AuthorCitation{Haq, Rakan Ahmad Dhiyaul}
+% If this is a Chicago style journal: Lastname, Firstname, Firstname Lastname, and Firstname Lastname.
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address[1]{\quad Teknologi Informasi, Telkom University, Bandung, Indonesia\\}
+
+% Contact information of the corresponding author
+\corres{Correspondence: rakanahmaddh@student.telkomuniversity.ac.id; Tel.: +62-857-7442-1041}
+
+% Current address and/or shared authorship
+\firstnote{NIM : 103032330116}  % Current address should not be the same as any items in the Affiliation section.
+
+% The commands \thirdnote{} till \eighthnote{} are available for further notes
+
+%\simplesumm{} % Simple summary
+
+%\conference{} % An extended version of a conference paper
+
+% Abstract (Do not insert blank lines, i.e. \\) 
+\abstract{Perkembangan teknologi menyebabkan aktivitas bermain game menjadi semakin populer di kalangan mahasiswa. Namun, kebiasaan bermain game dalam durasi yang lama dapat mempengaruhi pola tidur mahasiswa dan berpotensi menurunkan kualitas istirahat. Penelitian ini bertujuan untuk mengetahui pengaruh durasi bermain game terhadap jam tidur mahasiswa. Metode penelitian yang digunakan adalah metode kuantitatif dengan pengujian hipotesis menggunakan uji Z pada tingkat signifikansi 5\%. Data penelitian menggunakan sampel sebanyak 100 responden dengan standar deviasi tertentu yang dianalisis menggunakan rumus statistik. Hasil perhitungan menunjukkan nilai Z hitung sebesar -14,26 sedangkan nilai Z tabel sebesar ±1,96, sehingga nilai Z hitung berada di luar daerah penerimaan hipotesis nol. Berdasarkan hasil tersebut dapat disimpulkan bahwa hipotesis nol ditolak dan hipotesis alternatif diterima, yang berarti durasi bermain game berpengaruh secara signifikan terhadap jam tidur mahasiswa.
+}
+
+% Keywords
+\keyword{Kata Kunci; durasi bermain game; jam tidur mahasiswa; uji Z; statistik } 
+
+% The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
+%\PACS{J0101}
+%\MSC{}
+%\JEL{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Diversity
+%\LSID{\url{http://}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Applied Sciences
+%\featuredapplication{Authors are encouraged to provide a concise description of the specific application or a potential application of the work. This section is not mandatory.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Data
+%\dataset{DOI number or link to the deposited data set if the data set is published separately. If the data set shall be published as a supplement to this paper, this field will be filled by the journal editors. In this case, please submit the data set as a supplement.}
+%\datasetlicense{License under which the data set is made available (CC0, CC-BY, CC-BY-SA, CC-BY-NC, etc.)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Toxins
+%\keycontribution{The breakthroughs or highlights of the manuscript. Authors can write one or two sentences to describe the most important part of the paper.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Encyclopedia
+%\encyclopediadef{For entry manuscripts only: please provide a brief overview of the entry title instead of an abstract.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Advances in Respiratory Medicine
+%\addhighlights{yes}
+%\renewcommand{\addhighlights}{%
+
+%\noindent This is an obligatory section in “Advances in Respiratory Medicine”, whose goal is to increase the discoverability and readability of the article via search engines and other scholars. Highlights should not be a copy of the abstract, but a simple text allowing the reader to quickly and simplified find out what the article is about and what can be cited from it. Each of these parts should be devoted up to 2~bullet points.\vspace{3pt}\\
+%\textbf{What are the main findings?}
+% \begin{itemize}[labelsep=2.5mm,topsep=-3pt]
+% \item First bullet.
+% \item Second bullet.
+% \end{itemize}\vspace{3pt}
+%\textbf{What is the implication of the main finding?}
+% \begin{itemize}[labelsep=2.5mm,topsep=-3pt]
+% \item First bullet.
+% \item Second bullet.
+% \end{itemize}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pendahuluan}
+Perkembangan industri game mengalami pertumbuhan yang sangat pesat dalam beberapa tahun terakhir. Berdasarkan laporan industri game global, nilai pasar game diperkirakan mencapai USD 27.79 miliar pada tahun 2025. Pertumbuhan tersebut sering diukur menggunakan metrik Compound Annual Growth Rate (CAGR) yang menunjukkan rata-rata tingkat pertumbuhan tahunan suatu industri. Dengan meningkatnya CAGR industri game, semakin banyak mahasiswa yang menjadikan bermain game sebagai salah satu aktivitas hiburan utama dalam kehidupan sehari-hari \cite{berita2024}.
+
+Meskipun bermain game dapat memberikan hiburan dan melepas stres, aktivitas ini juga dapat mempengaruhi pola hidup mahasiswa. Salah satu dampak yang sering terjadi adalah perubahan pola tidur akibat durasi bermain game yang terlalu lama, terutama ketika dilakukan pada malam hari. Beberapa penelitian menunjukkan bahwa penggunaan perangkat digital secara berlebihan dapat menyebabkan keterlambatan waktu tidur serta menurunnya kualitas tidur seseorang \cite{Nuha2021,IndustrialWSN2023}. Kondisi tersebut dapat berdampak pada kesehatan fisik, konsentrasi belajar, serta performa akademik mahasiswa.
+
+Berdasarkan permasalahan tersebut, penelitian ini bertujuan untuk mengetahui apakah durasi bermain game memiliki pengaruh terhadap jam tidur mahasiswa. Pertanyaan penelitian dalam studi ini adalah apakah terdapat hubungan antara durasi bermain game dan waktu tidur mahasiswa. Untuk menjawab pertanyaan tersebut, penelitian ini menggunakan pengujian hipotesis statistik dengan hipotesis nol (H0) yang menyatakan bahwa durasi bermain game tidak berpengaruh terhadap jam tidur mahasiswa dan hipotesis alternatif (H1) yang menyatakan bahwa durasi bermain game berpengaruh terhadap jam tidur mahasiswa. Artikel ini disusun dalam beberapa bagian, yaitu penelitian terkait, metodologi penelitian, hasil percobaan, serta kesimpulan dari penelitian yang dilakukan.
+
+\section{Penelitian Terkait}
+Penelitian mengenai hubungan antara penggunaan teknologi digital dan pola tidur telah banyak dilakukan dalam beberapa tahun terakhir. Silva Fre dkk \cite{Silva2015} menunjukkan bahwa penggunaan perangkat elektronik pada malam hari dapat menyebabkan keterlambatan waktu tidur dan menurunnya kualitas tidur. Penelitian lain oleh Nuha \cite{Nuha2021} juga menemukan bahwa penggunaan media digital dalam durasi yang lama dapat mengurangi waktu tidur mahasiswa.
+
+Selain itu, penelitian terkait pemanfaatan teknologi digital dalam berbagai aktivitas manusia juga dibahas dalam studi sistem jaringan industri \cite{IndustrialWSN2023}. Penelitian tersebut menjelaskan bahwa perkembangan teknologi digital semakin mempengaruhi aktivitas sehari-hari manusia. Berdasarkan beberapa penelitian tersebut, dapat disimpulkan bahwa penggunaan teknologi digital berpotensi mempengaruhi pola tidur, namun penelitian yang secara khusus menganalisis durasi bermain game terhadap jam tidur mahasiswa masih terbatas.
+
+\section{Metodologi}
+Penelitian ini menggunakan pendekatan kuantitatif dengan melakukan analisis statistik terhadap hubungan antara durasi bermain game dan jam tidur mahasiswa. Data dikumpulkan dari sampel mahasiswa kemudian dianalisis menggunakan metode uji Z untuk menguji hipotesis yang telah ditentukan. Proses analisis meliputi pengumpulan data, perhitungan nilai statistik, serta perbandingan antara nilai Z hitung dan Z tabel untuk menentukan penerimaan atau penolakan hipotesis. 
+
+Rumus yang digunakan dalam uji Z ditunjukkan pada persamaan berikut.
+
+\begin{equation}
+Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}}
+\end{equation}
+
+Diagram alir keseluruhan metodologi penelitian disajikan pada Gambar 1.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node distance=2cm,
+every node/.style={draw, rectangle, rounded corners, align=center, minimum width=3cm, minimum height=0.8cm},
+arrow/.style={->, thick}
+]
+
+\node (start) {Mulai};
+\node (data) [below of=start] {Pengumpulan Data\\Durasi Bermain Game\\dan Jam Tidur};
+\node (process) [below of=data] {Pengolahan Data};
+\node (method) [below of=process] {Perhitungan Statistik\\Menggunakan Uji Z};
+\node (compare) [below of=method] {Membandingkan\\Z Hitung dan Z Tabel};
+\node (result) [below of=compare] {Menentukan\\Penerimaan atau\\Penolakan Hipotesis};
+\node (end) [below of=result] {Kesimpulan};
+
+\draw[arrow] (start) -- (data);
+\draw[arrow] (data) -- (process);
+\draw[arrow] (process) -- (method);
+\draw[arrow] (method) -- (compare);
+\draw[arrow] (compare) -- (result);
+\draw[arrow] (result) -- (end);
+
+\end{tikzpicture}
+\caption{Diagram Alur Metodologi Penelitian}
+\end{figure}
+
+\subsection{Data Penelitian}
+Data penelitian yang digunakan dalam studi ini berasal dari sampel mahasiswa yang memiliki kebiasaan bermain game. Data diambil dari dataset yang terdapat di kaggle, dan menggunakan 100 dari sekian banyak responden.
+
+Data yang diperoleh kemudian diolah untuk mendapatkan nilai rata-rata, standar deviasi, serta parameter statistik lainnya yang diperlukan dalam pengujian hipotesis. Ringkasan parameter dataset penelitian disajikan pada Tabel 1.
+
+\begin{table}[h]
+\centering
+\caption{Parameter Dataset Penelitian}
+\begin{tabular}{lll}
+\hline
+\textbf{Parameter} & \textbf{Nilai} & \textbf{Satuan} \\
+\hline
+Jumlah responden & 100 & orang \\
+Variabel 1 & Durasi bermain game & jam/hari \\
+Variabel 2 & Jam tidur mahasiswa & jam \\
+Metode analisis & Uji Z & -- \\
+Tingkat signifikansi & 0.05 & -- \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Analisis Statistik}
+Penelitian ini menggunakan pendekatan statistik untuk menguji hubungan antara durasi bermain game dan jam tidur mahasiswa. Metode yang digunakan adalah uji Z karena jumlah sampel yang digunakan cukup besar yaitu $n = 100$. Uji statistik ini digunakan untuk menentukan apakah terdapat pengaruh yang signifikan antara kedua variabel yang diteliti.
+
+Nilai statistik Z dihitung menggunakan persamaan berikut:
+
+\begin{equation}
+Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}}
+\end{equation}
+
+di mana $\bar{X}$ merupakan rata-rata sampel, $\mu$ merupakan rata-rata populasi, $\sigma$ merupakan standar deviasi, dan $n$ merupakan jumlah sampel penelitian.
+
+Hasil perhitungan nilai Z kemudian dibandingkan dengan nilai kritis pada tabel distribusi normal dengan tingkat signifikansi $\alpha = 0.05$. Jika nilai $|Z| > Z_{tabel}$ maka hipotesis nol ($H_0$) ditolak dan hipotesis alternatif ($H_1$) diterima.
+
+\subsection{Prosedur Pengujian}
+
+Prosedur analisis dimulai dengan mengolah data yang telah diperoleh kemudian diolah untuk menghitung nilai rata-rata dan standar deviasi yang diperlukan dalam analisis statistik. Selanjutnya dilakukan perhitungan nilai Z untuk mengetahui apakah terdapat pengaruh yang signifikan antara kedua variabel penelitian.
+
+Keputusan akhir penelitian ditentukan dengan membandingkan nilai Z hitung dengan nilai Z tabel pada tingkat signifikansi 5\%. Jika nilai Z hitung berada di luar daerah penerimaan hipotesis nol maka hipotesis alternatif diterima. Hasil analisis ini kemudian digunakan sebagai dasar dalam penarikan kesimpulan penelitian.
+
+
+
+\vspace{5pt}
+\section{Hasil Percobaan}
+
+Hasil analisis hubungan antara durasi bermain game dan jam tidur mahasiswa dirangkum pada Tabel \ref{tab:params}. Data menunjukkan bahwa rata-rata durasi bermain game mahasiswa adalah 4 jam per hari, sedangkan rata-rata jam tidur adalah 6 jam. Nilai Z sebesar -14.26 menjadi nilai yang paling menonjol karena berada jauh di luar batas kritis pada tingkat signifikansi 5\%, sehingga menunjukkan adanya perbedaan yang signifikan.
+
+\begin{table}[H]
+\centering
+\caption{Ringkasan Hasil Analisis}
+\label{tab:params}
+\begin{tabular}{lc}
+\toprule
+Aspek & Nilai \\ 
+\midrule
+Jumlah responden & 100 \\
+Rata-rata durasi bermain game & 4 jam/hari \\
+Rata-rata jam tidur & 6 jam \\
+Standar deviasi & 1.2 \\
+Nilai Z & -14.26 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Visualisasi hubungan antara durasi bermain game dan jam tidur ditunjukkan pada Gambar \ref{fig:hasil}. Grafik memperlihatkan kecenderungan penurunan jam tidur ketika durasi bermain game meningkat. Pola ini menunjukkan hubungan negatif antara kedua variabel.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=Durasi Bermain Game (jam),
+ylabel=Jam Tidur,
+width=10cm,
+height=6cm,
+grid=major
+]
+
+\addplot coordinates {
+(1,8)
+(2,7.5)
+(3,7)
+(4,6)
+(5,5.5)
+(6,5)
+};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Hubungan durasi bermain game dan jam tidur mahasiswa}
+\label{fig:hasil}
+\end{figure}
+
+Berdasarkan tabel dan grafik, terlihat bahwa semakin lama durasi bermain game maka jam tidur mahasiswa cenderung menurun. Pola penurunan ini mendukung hasil uji statistik yang menunjukkan adanya pengaruh signifikan antara kedua variabel.
+
+\section{Simpulan}
+
+Penelitian ini menganalisis hubungan antara durasi bermain game dan jam tidur mahasiswa menggunakan uji statistik Z. Hasil analisis menunjukkan rata-rata durasi bermain game sebesar 4 jam per hari dengan rata-rata waktu tidur 6 jam. Nilai Z sebesar -14.26 menunjukkan adanya perbedaan yang signifikan pada tingkat signifikansi 5\%, sehingga dapat disimpulkan bahwa semakin lama durasi bermain game maka jam tidur mahasiswa cenderung menurun.
+
+Penelitian ini masih memiliki keterbatasan karena data yang digunakan berasal dari dataset sekunder Kaggle dan hanya menganalisis dua variabel utama. Penelitian selanjutnya disarankan menggunakan dataset yang lebih beragam serta menambahkan variabel lain agar hasil analisis lebih komprehensif.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{6pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+%\supplementary{The following supporting information can be downloaded at:  \linksupplementary{s1}, Figure S1: title; Table S1: title; Video S1: title.}
+
+% Only for journal Methods and Protocols:
+% If you wish to submit a video article, please do so with any other supplementary material.
+% \supplementary{The following supporting information can be downloaded at: \linksupplementary{s1}, Figure S1: title; Table S1: title; Video S1: title. A supporting video article is available at doi: link.}
+
+% Only for journal Hardware:
+% If you wish to submit a video article, please do so with any other supplementary material.
+% \supplementary{The following supporting information can be downloaded at: \linksupplementary{s1}, Figure S1: title; Table S1: title; Video S1: title.\vspace{6pt}\\
+%\begin{tabularx}{\textwidth}{lll}
+%\toprule
+%\textbf{Name} & \textbf{Type} & \textbf{Description} \\
+%\midrule
+%S1 & Python script (.py) & Script of python source code used in XX \\
+%S2 & Text (.txt) & Script of modelling code used to make Figure X \\
+%S3 & Text (.txt) & Raw data from experiment X \\
+%S4 & Video (.mp4) & Video demonstrating the hardware in use \\
+%... & ... & ... \\
+%\bottomrule
+%\end{tabularx}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\authorcontributions{For research articles with several authors, a short paragraph specifying their individual contributions must be provided. The following statements should be used ``Conceptualization, X.X. and Y.Y.; methodology, X.X.; software, X.X.; validation, X.X., Y.Y. and Z.Z.; formal analysis, X.X.; investigation, X.X.; resources, X.X.; data curation, X.X.; writing---original draft preparation, X.X.; writing---review and editing, X.X.; visualization, X.X.; supervision, X.X.; project administration, X.X.; funding acquisition, Y.Y. All authors have read and agreed to the published version of the manuscript.'', please turn to the  \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation. Authorship must be limited to those who have contributed substantially to the work~reported.}
+%
+%\funding{Please add: ``This research received no external funding'' or ``This research was funded by NAME OF FUNDER grant number XXX.'' and  and ``The APC was funded by XXX''. Check carefully that the details given are accurate and use the standard spelling of funding agency names at \url{https://search.crossref.org/funding}, any errors may affect your future funding.}
+%
+%\institutionalreview{In this section, you should add the Institutional Review Board Statement and approval number, if relevant to your study. You might choose to exclude this statement if the study did not require ethical approval. Please note that the Editorial Office might ask you for further information. Please add “The study was conducted in accordance with the Declaration of Helsinki, and approved by the Institutional Review Board (or Ethics Committee) of NAME OF INSTITUTE (protocol code XXX and date of approval).” for studies involving humans. OR “The animal study protocol was approved by the Institutional Review Board (or Ethics Committee) of NAME OF INSTITUTE (protocol code XXX and date of approval).” for studies involving animals. OR “Ethical review and approval were waived for this study due to REASON (please provide a detailed justification).” OR “Not applicable” for studies not involving humans or animals.}
+%
+%\informedconsent{Any research article describing a study involving humans should contain this statement. Please add ``Informed consent was obtained from all subjects involved in the study.'' OR ``Patient consent was waived due to REASON (please provide a detailed justification).'' OR ``Not applicable'' for studies not involving humans. You might also choose to exclude this statement if the study did not involve humans.
+%
+%Written informed consent for publication must be obtained from participating patients who can be identified (including by the patients themselves). Please state ``Written informed consent has been obtained from the patient(s) to publish this paper'' if applicable.}
+%
+%\dataavailability{We encourage all authors of articles published in MDPI journals to share their research data. In this section, please provide details regarding where data supporting reported results can be found, including links to publicly archived datasets analyzed or generated during the study. Where no new data were created, or where data is unavailable due to privacy or ethical restrictions, a statement is still required. Suggested Data Availability Statements are available in section ``MDPI Research Data Policies'' at \url{https://www.mdpi.com/ethics}.} 
+
+% Only for journal Nursing Reports
+%\publicinvolvement{Please describe how the public (patients, consumers, carers) were involved in the research. Consider reporting against the GRIPP2 (Guidance for Reporting Involvement of Patients and the Public) checklist. If the public were not involved in any aspect of the research add: ``No public involvement in any aspect of this research''.}
+
+% Only for journal Nursing Reports
+%\guidelinesstandards{Please add a statement indicating which reporting guideline was used when drafting the report. For example, ``This manuscript was drafted against the XXX (the full name of reporting guidelines and citation) for XXX (type of research) research''. A complete list of reporting guidelines can be accessed via the equator network: \url{https://www.equator-network.org/}.}
+
+% Only for journal Nursing Reports
+%\useofartificialintelligence{Please describe in detail any and all uses of artificial intelligence (AI) or AI-assisted tools used in the preparation of the manuscript. This may include, but is not limited to, language translation, language editing and grammar, or generating text. Alternatively, please state that “AI or AI-assisted tools were not used in drafting any aspect of this manuscript”.}
+
+\acknowledgments{Penulis mengucapkan terima kasih kepada dosen pengampu mata kuliah yang telah memberikan arahan dan bimbingan dalam penyusunan penelitian ini. Dataset yang digunakan dalam penelitian ini dapat diakses melalui repositori GitHub pada tautan berikut: https://github.com/Hoshinovaa/game-sleep-study-metopen/}
+
+\conflictsofinterest{Penulis menyatakan bahwa tidak terdapat konflik kepentingan dalam penelitian ini.}
+
+\useofartificialintelligence{Penulisan artikel ini dibantu oleh AI untuk membantu penyesuaian struktur dan tata bahasa}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional
+
+%% Only for journal Encyclopedia
+%\entrylink{The Link to this entry published on the encyclopedia platform.}
+%
+%\abbreviations{Abbreviations}{
+%The following abbreviations are used in this manuscript:\\
+%
+%\noindent 
+%\begin{tabular}{@{}ll}
+%MDPI & Multidisciplinary Digital Publishing Institute\\
+%DOAJ & Directory of open access journals\\
+%TLA & Three letter acronym\\
+%LD & Linear dichroism
+%\end{tabular}
+%}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Optional
+%\appendixtitles{no} % Leave argument "no" if all appendix headings stay EMPTY (then no dot is printed after "Appendix A"). If the appendix sections contain a heading then change the argument to "yes".
+%\appendixstart
+%\appendix
+%\section[\appendixname~\thesection]{}
+%\subsection[\appendixname~\thesubsection]{}
+%The appendix is an optional section that can contain details and data supplemental to the main text---for example, explanations of experimental details that would disrupt the flow of the main text but nonetheless remain crucial to understanding and reproducing the research shown; figures of replicates for experiments of which representative data are shown in the main text can be added here if brief, or as Supplementary Data. Mathematical proofs of results not central to the paper can be added as an appendix.
+%
+%\begin{table}[H] 
+%\caption{This is a table caption.\label{tab5}}
+%\newcolumntype{C}{>{\centering\arraybackslash}X}
+%\begin{tabularx}{\textwidth}{CCC}
+%\toprule
+%\textbf{Title 1}	& \textbf{Title 2}	& \textbf{Title 3}\\
+%\midrule
+%Entry 1		& Data			& Data\\
+%Entry 2		& Data			& Data\\
+%\bottomrule
+%\end{tabularx}
+%\end{table}
+%
+%\section[\appendixname~\thesection]{}
+%All appendix sections must be cited in the main text. In the appendices, Figures, Tables, etc. should be labeled, starting with ``A''---e.g., Figure A1, Figure A2, etc.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{adjustwidth}{-\extralength}{0cm}
+%\printendnotes[custom] % Un-comment to print a list of endnotes
+
+\reftitle{Referensi}
+
+% Please provide either the correct journal abbreviation (e.g. according to the “List of Title Word Abbreviations” http://www.issn.org/services/online-services/access-to-the-ltwa/) or the full name of the journal.
+% Citations and References in Supplementary files are permitted provided that they also appear in the reference list here. 
+
+%=====================================
+% References, variant A: external bibliography
+%=====================================
+\bibliography{sumber}
+
+%=====================================
+% References, variant B: internal bibliography
+%=====================================
+
+
+% If authors have biography, please use the format below
+%\section*{Short Biography of Authors}
+%\bio
+%{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{Definitions/author1.pdf}}}
+%{\textbf{Firstname Lastname} Biography of first author}
+%
+%\bio
+%{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{Definitions/author2.jpg}}}
+%{\textbf{Firstname Lastname} Biography of second author}
+
+% For the MDPI journals use author-date citation, please follow the formatting guidelines on http://www.mdpi.com/authors/references
+% To cite two works by the same author: \citeauthor{ref-journal-1a} (\citeyear{ref-journal-1a}, \citeyear{ref-journal-1b}). This produces: Whittaker (1967, 1975)
+% To cite two works by the same author with specific pages: \citeauthor{ref-journal-3a} (\citeyear{ref-journal-3a}, p. 328; \citeyear{ref-journal-3b}, p.475). This produces: Wong (1999, p. 328; 2000, p. 475)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% for journal Sci
+%\reviewreports{\\
+%Reviewer 1 comments and authors’ response\\
+%Reviewer 2 comments and authors’ response\\
+%Reviewer 3 comments and authors’ response
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\PublishersNote{}
+\end{adjustwidth}
+\end{document}
+
